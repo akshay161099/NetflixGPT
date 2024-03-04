@@ -1,16 +1,20 @@
-import { useSelector } from "react-redux";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import Header from "./Header";
-import { useNavigate } from "react-router-dom";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer"
 const Browse = () =>{
-    const navigate = useNavigate();
-    const user = useSelector(store => store.user);
-   
-        return(
-            <div>
-                <Header/>
+        useNowPlayingMovies();
+    return(
+        
+        <div className="">
+            <Header/>
+            <div className=" ">
+                <MainContainer/>
             </div>
-        )
-    
-    
+            <div className="bg-black  ">
+            <SecondaryContainer/>
+            </div>
+        </div>
+    )
 }
 export default Browse;
